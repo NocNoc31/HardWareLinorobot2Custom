@@ -1,0 +1,8 @@
+jrowberg/I2Cdevlib-ADXL345
+https://github.com/micro-ROS/micro_ros_platformio
+jrowberg/I2Cdevlib-Core
+jrowberg/I2Cdevlib-ITG3200
+madhephaestus/ESP32Encoder
+jrowberg/I2Cdevlib-HMC5883L
+jrowberg/I2Cdevlib-MPU6050
+madhephaestus/ESP32Servo

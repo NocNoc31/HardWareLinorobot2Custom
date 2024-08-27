@@ -28,9 +28,9 @@
 // #define USE_QMC5883L_MAG
 // #define MAG_BIAS { 0, 0, 0 }
 
-#define K_P 1.4   // P constant
-#define K_I 0.1   // I constant
-#define K_D 0.025 // D constant
+#define K_P 1.0  // P constant // og 1.4 // 0.35 //0.5
+#define K_I 0.0   // I constant // og 0.1 // 0.1 //0.1
+#define K_D 0.0 // D constant // og 0.025 //0.7  //0.7
 
 /*
 ROBOT ORIENTATION
@@ -41,18 +41,18 @@ ROBOT ORIENTATION
 */
 
 // define your robot' specs here
-#define MOTOR_MAX_RPM 170               // motor's max RPM
+#define MOTOR_MAX_RPM 250               // motor's max RPM
 #define MAX_RPM_RATIO 0.85              // max RPM allowed for each MAX_RPM_ALLOWED = MOTOR_MAX_RPM * MAX_RPM_RATIO
 #define MOTOR_OPERATING_VOLTAGE 12      // motor's operating voltage (used to calculate max RPM)
 #define MOTOR_POWER_MAX_VOLTAGE 12      // max voltage of the motor's power source (used to calculate max RPM)
 #define MOTOR_POWER_MEASURED_VOLTAGE 12 // current voltage reading of the power connected to the motor (used for calibration)
-#define COUNTS_PER_REV1 450             // wheel1 encoder's no of ticks per rev
-#define COUNTS_PER_REV2 450             // wheel2 encoder's no of ticks per rev
-#define COUNTS_PER_REV3 450             // wheel3 encoder's no of ticks per rev
-#define COUNTS_PER_REV4 450             // wheel4 encoder's no of ticks per rev
-#define WHEEL_DIAMETER 0.0560           // wheel's diameter in meters
-#define LR_WHEELS_DISTANCE 0.224        // distance between left and right wheels
-#define PWM_BITS 10                     // PWM Resolution of the microcontroller
+#define COUNTS_PER_REV1 884             // wheel1 encoder's no of ticks per rev
+#define COUNTS_PER_REV2 884             // wheel2 encoder's no of ticks per rev
+#define COUNTS_PER_REV3 884             // wheel3 encoder's no of ticks per rev
+#define COUNTS_PER_REV4 884             // wheel4 encoder's no of ticks per rev
+#define WHEEL_DIAMETER 0.0796           // wheel's diameter in meters
+#define LR_WHEELS_DISTANCE 0.25575        // distance between left and right wheels
+#define PWM_BITS 8                     // PWM Resolution of the microcontroller
 #define PWM_FREQUENCY 20000             // PWM Frequency
 
 // INVERT ENCODER COUNTS

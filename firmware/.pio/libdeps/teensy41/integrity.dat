@@ -1,0 +1,6 @@
+https://github.com/micro-ROS/micro_ros_platformio
+jrowberg/I2Cdevlib-HMC5883L
+jrowberg/I2Cdevlib-ADXL345
+jrowberg/I2Cdevlib-ITG3200
+jrowberg/I2Cdevlib-MPU6050
+jrowberg/I2Cdevlib-Core
