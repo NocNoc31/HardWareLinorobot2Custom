@@ -275,47 +275,54 @@ void moveBase()
     float current_rpm4 = motor4_encoder.getRPM();
 
 
-    Serial.print("Motor1: Required RPM: ");
-    Serial.print(req_rpm.motor1);
-    Serial.print(", Current RPM: ");
-    Serial.println(current_rpm1);
+    // Serial.print("Motor1: Required RPM: ");
+    // Serial.print(req_rpm.motor1);
+    // Serial.print(", Current RPM: ");
+    // Serial.println(current_rpm1);
 
-    Serial.print("Motor2: Required RPM: ");
-    Serial.print(req_rpm.motor2);
-    Serial.print(", Current RPM: ");
-    Serial.println(current_rpm2);
+    // Serial.print("Motor2: Required RPM: ");
+    // Serial.print(req_rpm.motor2);
+    // Serial.print(", Current RPM: ");
+    // Serial.println(current_rpm2);
 
-    Serial.print("Motor3: Required RPM: ");
-    Serial.print(req_rpm.motor3);
-    Serial.print(", Current RPM: ");
-    Serial.println(current_rpm3);
+    // Serial.print("Motor3: Required RPM: ");
+    // Serial.print(req_rpm.motor3);
+    // Serial.print(", Current RPM: ");
+    // Serial.println(current_rpm3);
 
-    Serial.print("Motor4: Required RPM: ");
-    Serial.print(req_rpm.motor4);
-    Serial.print(", Current RPM: ");
-    Serial.println(current_rpm4);
+    // Serial.print("Motor4: Required RPM: ");
+    // Serial.print(req_rpm.motor4);
+    // Serial.print(", Current RPM: ");
+    // Serial.println(current_rpm4);
     
-    Serial.println("-----------------------------");
+    // Serial.println("-----------------------------");
 
-    Serial.print("Motor1: Quay voi toc do : ");
-    Serial.print(motor1_pid.compute(req_rpm.motor1, current_rpm1));
+    // Serial.print("Motor1: Quay voi toc do : ");
+    // Serial.print(motor1_pid.compute(req_rpm.motor1, current_rpm1));
 
-    Serial.print("Motor2: Quay voi toc do : ");
-    Serial.print(motor2_pid.compute(req_rpm.motor2, current_rpm2));
+    // Serial.print("Motor2: Quay voi toc do : ");
+    // Serial.print(motor2_pid.compute(req_rpm.motor2, current_rpm2));
 
-    Serial.print("Motor3: Quay voi toc do : ");
-    Serial.print(motor3_pid.compute(req_rpm.motor3, current_rpm3));
+    // Serial.print("Motor3: Quay voi toc do : ");
+    // Serial.print(motor3_pid.compute(req_rpm.motor3, current_rpm3));
 
-    Serial.print("Motor4: Quay voi toc do : ");
-    Serial.print(motor4_pid.compute(req_rpm.motor4, current_rpm4));
-    Serial.println("-----------------------------");
+    // Serial.print("Motor4: Quay voi toc do : ");
+    // Serial.print(motor4_pid.compute(req_rpm.motor4, current_rpm4));
+    // Serial.println("-----------------------------");
+
     // the required rpm is capped at -/+ MAX_RPM to prevent the PID from having too much error
-    // the PWM value sent to the motor driver is the calculated PID based on required RPM vs measured RPM
+    //the PWM value sent to the motor driver is the calculated PID based on required RPM vs measured RPM
     motor1_controller.spin(motor1_pid.compute(req_rpm.motor1, current_rpm1));
     motor2_controller.spin(motor2_pid.compute(req_rpm.motor2, current_rpm2));
     motor3_controller.spin(motor3_pid.compute(req_rpm.motor3, current_rpm3));
     motor4_controller.spin(motor4_pid.compute(req_rpm.motor4, current_rpm4));
 
+
+    // motor1_controller.spin(250);
+    // motor2_controller.spin(250);
+    // motor3_controller.spin(250);
+    // motor4_controller.spin(250);
+    
     Kinematics::velocities current_vel = kinematics.getVelocities(
         current_rpm1, 
         current_rpm2, 

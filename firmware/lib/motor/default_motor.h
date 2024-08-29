@@ -247,13 +247,13 @@ class ESC: public MotorInterface
         void forward(int pwm) override
         {
             if (pwm_pin_ < 0) return;
-            motor_.writeMicroseconds(1500 + pwm);
+            motor_.writeMicroseconds(1500*0.9 + pwm);
         }
 
         void reverse(int pwm) override
         {
             if (pwm_pin_ < 0) return;
-            motor_.writeMicroseconds(1500 + pwm);
+            motor_.writeMicroseconds(1500*0.9 + pwm);
         }
 
     public:
@@ -265,13 +265,13 @@ class ESC: public MotorInterface
             motor_.attach(pwm_pin);
             
             //ensure that the motor is in neutral state during bootup
-            motor_.writeMicroseconds(1500);
+            motor_.writeMicroseconds(1500*0.9);
         }
 
         void brake() override
         {
             if (pwm_pin_ < 0) return;
-            motor_.writeMicroseconds(1500);         
+            motor_.writeMicroseconds(1500*0.9);         
         }
 };
 
